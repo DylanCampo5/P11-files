@@ -6,7 +6,7 @@
 int main() {
 
 //Abre el archivo que quiero en modo lectura  
-  std::ifstream archivoEntrada("hola.txt");
+  std::ifstream archivoEntrada("100Soledades.txt");
 
   std::stringstream buffer;
   buffer << archivoEntrada.rdbuf();
@@ -20,7 +20,8 @@ int main() {
   
 //---------------------------------------------------
 //Esta parte son las modificaciones que queramos hacer
-  std::string palabra = "the";
+  std::string palabra = "Úrsula";
+  std::cout << "Cuántas veces aparecerá la palabra: " << palabra << "." << std::endl;
   int suma{0};
   
   size_t pos = contenido.find(palabra);
