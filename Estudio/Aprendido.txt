@@ -1,0 +1,44 @@
+//Como cambiar una palabra por otra
+	std::string palabra_antigua = " ";
+	std::string palabra_nueva = " ";
+	
+	size_t pos = contenido.find(palabra_antigua);
+	while (pos != std::string::npos) {
+		contenido.replace(pos, palabra_antigua.length(), palabra_nueva);
+		pos = contenido.find(palabra_antigua, pos + palabra_nueva.length());
+	}
+
+//Como cambiar una letra por otra
+	char letra_antigua = '';
+	char letra_nueva = '';
+	
+ 	for (size_t i = 0; i < contenido.length(); ++i) {
+		if (contenido[i] == letra_antigua) {
+			contenido[i] = letra_nueva;
+		}
+	}
+
+//Como cambiar más de una letra
+	std::vector<char> letra = {'a', 'e', 'i', 'o', 'u'};
+
+	for (char &c : contenido);
+ 		if (c == letra[0]) {
+			c = letra[1];
+		}
+		else if (c == letra[1]) {
+			c = letra[2]:
+		}
+		else if () {
+		else if () {
+		else if () {
+	}
+
+//Como contar x palabra en un texto
+	(Lo del buffer)	
+
+	int suma{0};
+	size_t pos = contenido.find()
+	while (pos != std::string::npos) {
+		suma++;
+		pos = contenido.find(palabra, pos + palabra.length());
+	}

@@ -1,0 +1,57 @@
+------------------------------------------------------------------------------
+//Como se hace el inicio para que lea el archivo
+	std::ifstream Archivo(" ");
+	
+	if (! archivoEntrada) {
+		std::cerr << " " << std::endl;
+		return 1;
+	}
+
+	std::string contenido;
+	std::getline(Archivo, contenido);
+-----------------------------------------------------------------------------
+Acá entre la parte de inicio y el final, va lo que hará el programa
+-----------------------------------------------------------------------------
+//Como hacer que modifique encima del archivo anterior
+	archivoEntrada.close();
+  	
+	std::ofstream archivoSalida("MiArchivo.txt");
+
+	if (! archivoEntrada) {
+		std::cerr << " " << std::endl;
+		return 1;
+	}
+	archivoSalida << contenido;
+	archivoSalida.close();
+
+//Como hacer que las modificaciones las haga en un nuevo archivo
+	archivoEntrada.close();
+
+	std::ofstream archivoSalida("NuevoArchivo.txt");
+	
+	if (! archivoEntrada) {
+		std::cerr << " " << std::endl;
+		return 1;
+	}
+
+	archivoSalida << contenido;
+	archivoSalida.close();
+
+//
+-----------------------------------------------------------------------------
+/NOTA
+	//Para leer solo una línea (Una mierda)
+		std::contenido;
+		std::getline(Archivo, contenido);
+	//Para leer TODO el archivo (Nice)
+		std::strigstream buffer;
+		buffer << Archivo.rdbuf();
+		std::string contenido = buffer.str();
+
+/NOTA
+	El final no siempre es obligatorio, si quieres que te imprima algo
+	en pantalla, tipo, la suma de una palabra, no hace falta el final
+
+/NOTA
+	Para lo del buffer, necesitamos el #include <sstream>
+	Además del que lee el .txt #include <fstream>
