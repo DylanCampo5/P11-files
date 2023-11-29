@@ -7,6 +7,7 @@
 		contenido.replace(pos, palabra_antigua.length(), palabra_nueva);
 		pos = contenido.find(palabra_antigua, pos + palabra_nueva.length());
 	}
+//-----------------------------------------------------------------------------------------------
 
 //Como cambiar una letra por otra
 	char letra_antigua = '';
@@ -17,6 +18,7 @@
 			contenido[i] = letra_nueva;
 		}
 	}
+//-----------------------------------------------------------------------------------------------
 
 //Como cambiar más de una letra
 	std::vector<char> letra = {'a', 'e', 'i', 'o', 'u'};
@@ -32,6 +34,7 @@
 		else if () {
 		else if () {
 	}
+//----------------------------------------------------------------------------------------------
 
 //Como contar x palabra en un texto
 	(Lo del buffer)	
@@ -42,3 +45,46 @@
 		suma++;
 		pos = contenido.find(palabra, pos + palabra.length());
 	}
+//---------------------------------------------------------------------------------------------
+
+//NOTA
+    	for (char& caracter : resultado) {
+       		 if (isalpha(caracter)) {
+           		 char base = isupper(caracter) ? 'A' : 'a';
+	     	 	 caracter = (caracter - base + clave) % 26 + base;
+      		 }
+	}
+   //Esta shit, el isalpha lo que hace es que verifica si el char el una letra alfabetica
+   //El '?' funciona como un condicional
+//---------------------------------------------------------------------------------------------
+
+//Como copiar en un nuevo archivo, SOLO las líneas en las que aparece la palabra que yo elija:
+
+	bool contienePalabra(const std::string& frase, const std::string& palabra) {
+
+    	return frase.find(palabra) != std::string::npos;
+        }
+
+	int main () {
+	...
+
+	std::vector<std::string> frases;
+    	std::string linea;
+    	while (std::getline(Archivo, linea)) {
+        	frases.push_back(linea);
+    	}
+
+    	std::string palabraABuscar = "Úrsula";
+    
+    	Archivo.close();
+    	std::ofstream Nuevo("NuevaSoledad.txt");
+
+    	for (const std::string& frase : frases) {
+        	if (contienePalabra(frase, palabraABuscar)) {
+            		Nuevo << frase << '\n';
+        	}
+    	}
+   	Nuevo.close();
+	return 0;
+  	}
+//---------------------------------------------------------------------------------------------
