@@ -17,7 +17,7 @@ int main() {
   std::string salto1 = "Gabriel García Márquez";
   std::string salto2 = "Cien años de soledad";
   std::string hueco = "  ";
-  size_t pos = contenido.find(salto1, salto2); 
+  size_t pos = contenido.find(salto1); 
 
   while (pos != std::string::npos) {
     contenido.replace(pos, salto1.length(), hueco);
